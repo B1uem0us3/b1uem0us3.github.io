@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="使用Typora+PicGo+阿里云OSS搭建博客图床前言​	为什么要配置图床？ ​	在用Typora写博客时，插入博客的图片往往是以“外链”的形式存在，也就是说使用本地Markdown编辑器（如Typora）时，如果MD文件里面插入的图片被移动或者删除，文件路径发生了变化，我们的MD文档里面对应的图片就无法显示。因此就需要用到图床来避免图片失效的问题。 ​	什么是图床？ ​	图床是一种用于存储和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/07/03/%E4%BD%BF%E7%94%A8Typora+PicGo+%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用Typora+PicGo+阿里云OSS搭建博客图床前言​	为什么要配置图床？ ​	在用Typora写博客时，插入博客的图片往往是以“外链”的形式存在，也就是说使用本地Markdown编辑器（如Typora）时，如果MD文件里面插入的图片被移动或者删除，文件路径发生了变化，我们的MD文档里面对应的图片就无法显示。因此就需要用到图床来避免图片失效的问题。 ​	什么是图床？ ​	图床是一种用于存储和">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959146.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959147.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959148.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959149.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959151.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959152.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959153.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959154.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959155.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959156.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959157.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959158.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959159.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959160.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959161.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959163.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959164.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959165.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959166.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959167.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959168.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959169.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959170.png">
+<meta property="og:image" content="https://pic.b1ue.xyz/hexo/202407120959171.png">
+<meta property="article:published_time" content="2024-07-03T06:01:55.360Z">
+<meta property="article:modified_time" content="2024-07-12T02:00:33.991Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.b1ue.xyz/hexo/202407120959146.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-使用Typora+PicGo+阿里云OSS搭建博客图床" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/03/%E4%BD%BF%E7%94%A8Typora+PicGo+%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/" class="article-date">
+  <time class="dt-published" datetime="2024-07-03T06:01:55.360Z" itemprop="datePublished">2024-07-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="使用Typora-PicGo-阿里云OSS搭建博客图床"><a href="#使用Typora-PicGo-阿里云OSS搭建博客图床" class="headerlink" title="使用Typora+PicGo+阿里云OSS搭建博客图床"></a>使用Typora+PicGo+阿里云OSS搭建博客图床</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	<strong>为什么要配置图床？</strong></p>
+<p>​	在用Typora写博客时，插入博客的图片往往是以“外链”的形式存在，也就是说使用本地Markdown编辑器（如Typora）时，如果MD文件里面插入的图片被移动或者删除，文件路径发生了变化，我们的MD文档里面对应的图片就无法显示。因此就需要用到图床来避免图片失效的问题。</p>
+<p>​	<strong>什么是图床？</strong></p>
+<p>​	图床是一种用于存储和托管图片的在线服务。使用图床，在我们写博客往MD文档插入图片的过程中，图片会被上传到图床，并返回这个图片的链接。这时图片就被存储在网络图床的服务器上面，不再是存储在本地。我们能通过任何有网络的地方来访问获取到这张图片，本地的图片不管是移动还是删除，也不会影响到图床里面的图片。我们写的MD文档中的图片也不会失效了。</p>
+<p>​	<strong>注意：</strong>阿里云OSS需要付费，如果想用免费的图床可以选择七牛云等免费图床。</p>
+<h2 id="1-准备软件"><a href="#1-准备软件" class="headerlink" title="1.准备软件"></a>1.准备软件</h2><h3 id="1-1-Typora"><a href="#1-1-Typora" class="headerlink" title="1.1 Typora"></a>1.1 Typora</h3><p>​		<a target="_blank" rel="noopener" href="https://typoraio.cn/">官方网站</a></p>
+<p>​		这里先使用学习版，正版等到工作有能力了再补票上车。</p>
+<h3 id="1-2-PicGo"><a href="#1-2-PicGo" class="headerlink" title="1.2 PicGo"></a>1.2 PicGo</h3><p>​		<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">GitHub地址</a></p>
+<p>​		找到你系统的对应版本安装即可。我的系统是Windows11，选择如图版本。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959146.png"></p>
+<h2 id="2-配置阿里云OSS"><a href="#2-配置阿里云OSS" class="headerlink" title="2.配置阿里云OSS"></a>2.配置阿里云OSS</h2><p>​	打开阿里云OSS官网。官网如图所示：</p>
+<p>​	<a target="_blank" rel="noopener" href="https://www.aliyun.com/product/oss">https://www.aliyun.com/product/oss</a></p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959147.png"></p>
+<h3 id="2-1-注册账户，开通对象储存"><a href="#2-1-注册账户，开通对象储存" class="headerlink" title="2.1 注册账户，开通对象储存"></a>2.1 注册账户，开通对象储存</h3><p>​		注册账号并完成实名认证后打开右上角的<strong>控制台</strong>。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959148.png"></p>
+<p>​		在左侧选择对象存储OSS。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959149.png"></p>
+<h3 id="2-2-创建Bucket"><a href="#2-2-创建Bucket" class="headerlink" title="2.2 创建Bucket"></a>2.2 创建Bucket</h3><p>​	第一步，先在左侧选择概览。然后进行第二步，创建Bucket。如下图所示：</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959151.png"></p>
+<p>​	如图填写，要求：</p>
+<ul>
+<li>Bucket名称不能有大写，且不能与别人的重复。</li>
+<li>地域选择离你近的城市。</li>
+<li>存储类型选择标准存储。</li>
+<li>存储冗余类型根据经济实力酌情选择。</li>
+<li>读写权限一定要选择<strong>公共读</strong>。</li>
+</ul>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959152.png"></p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959153.png"></p>
+<h3 id="2-3-找到地域节点"><a href="#2-3-找到地域节点" class="headerlink" title="2.3 找到地域节点"></a>2.3 找到地域节点</h3><p>​	点击你的Bucket名称，找到概览并点击，在下面找到地域节点。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959154.png"></p>
+<p>只需要复制以下内容，后面的’.alinyuncs.com’不需要复制，接下来会用到。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oss-cn-shanghai</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-创建AccessKey"><a href="#2-4-创建AccessKey" class="headerlink" title="2.4 创建AccessKey"></a>2.4 创建AccessKey</h3><p>​	来到右上角，将鼠标放到你的头像上，点击下面的AccessKey管理</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959155.png"></p>
+<p>​	点击会提示AccessKey Secret查询下线，由于我们没有创建过，选择忽略。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959156.png"></p>
+<p>​	确定完成后我们会收到一个名为安全提示的弹窗，我们选择继续使用AccessKey。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959157.png"></p>
+<p>​	选择创建AccessKey，并完成安全验证</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959158.png"></p>
+<p>​	安全验证完成后就会弹出你的AccessKey，由于安全政策更新，后续无法查询这个AccessKey，所以请妥善保管。这个AccessKey包含你账号的所有权限，类似于密码，<strong>一定不能泄露！！！</strong></p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959159.png"></p>
+<h3 id="2-5-创建子账户来配置PicGo"><a href="#2-5-创建子账户来配置PicGo" class="headerlink" title="2.5 创建子账户来配置PicGo"></a>2.5 创建子账户来配置PicGo</h3><p>​	上一步创建的AccessKey是主账户的，它可以用来配置PicGo，但如果你只需要用OSS，强烈建议使用子账号来进行Bucket的访问，这样就可以避免主账户的AccessKey或者密码泄露的问题，提高账户安全性。</p>
+<p>​	我们再次通过右上角来访问AccessKey管理，这次选择使用子账号AccessKey</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959160.png"></p>
+<p>​	点击创建用户</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959161.png"></p>
+<p>​	自行填写登录名称，显示名称。勾选控制台访问和OpenAPI调用访问。其余选项默认，点击创建，完成安全验证。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959163.png"></p>
+<p>完成账户创建后，将红框中的AccessKey ID和AccessKey Secret复制下来，为下面的配置做准备。</p>
+<h3 id="2-6-为子账户配置OSS权限"><a href="#2-6-为子账户配置OSS权限" class="headerlink" title="2.6 为子账户配置OSS权限"></a>2.6 为子账户配置OSS权限</h3><p>​	勾选刚才的子账户，点击添加权限按钮，再勾选关于OSS的两项权限。</p>
+<ul>
+<li>AliyunOSSFullAccess——管理对象存储服务（OSS）权限</li>
+<li>AliyunOSSReadOnlyAccess——只读访问对象存储服务（OSS）的权限</li>
+</ul>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959164.png"></p>
+<p>​	确认新增授权后，就可以进行关于PicGo的配置了。</p>
+<h2 id="3-配置PicGo"><a href="#3-配置PicGo" class="headerlink" title="3.配置PicGo"></a>3.配置PicGo</h2><h3 id="3-1-打开PicGo"><a href="#3-1-打开PicGo" class="headerlink" title="3.1 打开PicGo"></a>3.1 打开PicGo</h3><p>不知道为什么，我安装玩PicGo后双击桌面的快捷方式打不开，只能从右下角打开（其实是PicGo已经后台运行了），打开后如图所示。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959165.png"></p>
+<h3 id="3-2-PicGo基本配置"><a href="#3-2-PicGo基本配置" class="headerlink" title="3.2 PicGo基本配置"></a>3.2 PicGo基本配置</h3><p>我们点击图床配置，选择阿里云OSS，配置如下：</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959166.png"></p>
+<ul>
+<li>设定KeyId：2.6中子账户的KeyId。</li>
+<li>设定KeySecret：2.6中子账户的KeySecret。</li>
+<li>设定Bucket：填刚刚在阿里云OSS中创建的Bucket名称。</li>
+<li>设定存储区域：2.3中的地域节点中的第一个字段。</li>
+<li>设定存储路径：自定义，以&#x2F;结尾（相当于文件夹），例如 img&#x2F;。由于我配置是为了给博客做图床，所以命名为hexo&#x2F;，具体怎么命名看个人喜好。</li>
+</ul>
+<p><strong>注意：一定要注意，设定存储区域里要填的是之前记下来的地域节点里面的第一个字段，比如你的地域节点值是oss-cn-shanghai.aliyuncs.com，那么这里只需要填oss-cn-shanghai，否则配置失败无法上传图片。具体可以看2.3。</strong></p>
+<h3 id="3-3-PicGo其他配置"><a href="#3-3-PicGo其他配置" class="headerlink" title="3.3 PicGo其他配置"></a>3.3 PicGo其他配置</h3><p>在PicGo其他设置中选择开启<strong>时间戳重命名</strong>和<strong>上传后自动复制URL</strong>。</p>
+<p>时间戳重命名的作用：以上传时间来重命名图片，避免同名的图片无法上传（该设置不影响本地图片名）。</p>
+<p>上传后自动复制URL：字面意思，就是上传完成后会把图片的地址复制到剪贴板里。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959167.png"></p>
+<p>到此PicGo的配置就结束了。</p>
+<h2 id="4-Typora的配置"><a href="#4-Typora的配置" class="headerlink" title="4.Typora的配置"></a>4.Typora的配置</h2><p>​	打开Typora，点击左上角的文件选项，选择偏好设置。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959168.png"></p>
+<p>​	点击图像，按照图片设置，可以参考图里的设置来进行。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959169.png"></p>
+<p>​	PicGo的路径可以在桌面的快捷方式-右键-打开文件所在的位置来查看。</p>
+<p>​	设置完成后，我们可以点击下方的验证图片上传按钮来验证配置是否正确。</p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959170.png"></p>
+<p><img src="https://pic.b1ue.xyz/hexo/202407120959171.png"></p>
+<p>可以发现成功了，并且加入的图片也进入了图床的相册。单击图片也能看见图片的链接变成了阿里云OSS的网络链接而不是本地路径，成功！</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>​	在平时写博客的时候，我们只需要复制图片，在typora里面粘贴即可，图片会自动上传到图床。</p>
+<p>​	开始你的创作吧！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/03/%E4%BD%BF%E7%94%A8Typora+PicGo+%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/" data-id="clyi1y63y0002w0mq8pb68lbz" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/07/04/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/07/03/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%88%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/07/04/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/03/%E4%BD%BF%E7%94%A8Typora+PicGo+%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/03/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%88%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%89/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
